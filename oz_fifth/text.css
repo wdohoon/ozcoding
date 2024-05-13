@@ -1,0 +1,31 @@
+chat-screen-texts{
+    padding: 0;
+    list-style-type: none;
+}
+.caht-screen-texts > .text{
+    background-color: aquamarine;
+    width: 280px;
+    height: 50px;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 30px;
+    position: relative;
+    left: 20px;
+}
+.caht-screen-texts > .text::after{
+    content: "";
+    border-right: 16px solid aquamarine;
+    border-bottom: 16px solid transparent;
+    position: absolute;
+    top: 10px;
+    left: -10px;
+}
+.caht-screen-texts > .text:hover{
+    background-color: aqua;
+    transition: backgrround-color 1500ms 200ms ease-in;
+}
+.caht-screen-texts > .text:hover::after{
+    border-right: 16px solid aquamarine;
+    transition: backgrround-color 1500ms 200ms ease-in;
+}
