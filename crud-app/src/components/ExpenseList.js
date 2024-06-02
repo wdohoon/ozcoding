@@ -2,15 +2,20 @@ import React from 'react';
 import './ExpenseList.css';
 import ExpenseItem from './ExpenseItem';
 
-const ExpenseList = ({ initialExpenses, handleDelete }) => {
+const ExpenseList = ({ expenses, handleDelete, handleEdit }) => {
   return (
     <>
       <ul className='list'>
-        {initialExpenses.map(expense => (
-          <ExpenseItem key={expense.id} expense={expense} handleDelete={handleDelete} />
+        {expenses.map(expense => (
+          <ExpenseItem 
+            key={expense.id} 
+            expense={expense} 
+            handleDelete={handleDelete} 
+            handleEdit={handleEdit} 
+          />
         ))}
       </ul>
-      <button className='btn'>
+      <button className='btn' onClick={() => handleDelete(expenses.map(expense => expense.id))}>
         목록 지우기
       </button>
     </>
