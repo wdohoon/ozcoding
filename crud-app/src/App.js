@@ -41,6 +41,10 @@ const App = () => {
     handleAlert({ type: "danger", text: "아이템이 삭제되었습니다." });
   }
 
+  const clearItems = () => {
+    setExpenses([]);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (charge !== "" && amount > 0) {
@@ -91,6 +95,8 @@ const App = () => {
             expenses={expenses}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
+            clearItems={clearItems}
+            initialExpenses={expenses}
           />
         </div>
         <div style={{ display: 'flex', justifyContent: 'start', marginTop: '1rem' }}>
